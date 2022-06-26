@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hello/site.css' %}"/>
+</head>
+
+<body>
+<div class="navbar">
+    <a href="{% url 'home' %}" class="navbar-brand">Inicio</a>
+    <a href="{% url 'log' %}" class="navbar-item">Mensaje Log</a>
+    <a href="{% url 'about' %}" class="navbar-item">Acerca de</a>
+    <a href="{% url 'contact' %}" class="navbar-item">Contacto</a>
+</div>
+
+<div class="body-content">
+    {% block content %}
+    {% endblock %}
+    <hr/>
+    <footer>
+        <p>Emmanuel López García</p>
+        <p>Luis Daniel Sánchez Cabrera</p>
+        <p>© 2022</p>
+    </footer>
+</div>
+</body>
+</html>
