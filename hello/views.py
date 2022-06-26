@@ -1,6 +1,17 @@
+import re
+from django.utils.timezone import datetime
+from django.http import HttpResponse
 from django.shortcuts import render
 
-from django.http import HttpResponse
-
 def home(request):
-    return HttpResponse("Hola Django Emmanuel y luis daniel")
+    return HttpResponse("Hello, Django!")
+
+def hello_there(request, name):
+    return render(
+        request,
+        'hello/hello_there.html',
+        {
+            'name': name,
+            'date': datetime.now()
+        }
+    )
