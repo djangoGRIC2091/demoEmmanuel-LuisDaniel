@@ -5,9 +5,19 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from hello.forms import LogMessageForm
 from hello.models import LogMessage
+from django.views.generic import ListView
 
-def home(request):
+'''def home(request):
     return render(request, "hello/home.html")
+'''
+
+class HomeListView(ListView):
+    """Renders the home page, with a list of all messages."""
+    model = LogMessage
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeListView, self).get_context_data(**kwargs)
+        return context
 
 def about(request):
     return render(request, "hello/about.html")

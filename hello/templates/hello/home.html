@@ -1,8 +1,32 @@
 {% extends "hello/layout.html" %}
 {% block title %}
-Inicio
+    Inicio
 {% endblock %}
 {% block content %}
-<p>Esta es la página de Inicio del demo.</p>
-<p>Emmanuel y Luis Daniel</p>
+    <h2>Logged messages</h2>
+
+    {% if message_list %}
+        <table class="message_list">
+            <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Mensaje</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in message_list %}
+                <tr>
+                    <td>{{ message.log_date | date:'d M Y' }}</td>
+                    <td>{{ message.log_date | time:'H:i:s' }}</td>
+                    <td>
+                        {{ message.message }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Los mensajes no han sido regitrados. Usa la <a href="{% url 'log' %}">Formulario de resgitro de mensaje</a>.</p>
+    {% endif %}
 {% endblock %}
