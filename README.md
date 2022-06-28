@@ -1,3 +1,2 @@
 # DemoEmmanuel-LuisDaniel
-# ESTE ES EL PRIMER COMENTARIO.
-# ##ESTE ES EL SEGUNDO COMENTARIO
+-Este repositorio contiene el demo realizado en visual studio code
