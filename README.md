@@ -29,7 +29,21 @@ Posteriormente es necesario seguir los siguientes pasos:
 
 `pip3 install -r requirements.txt`
 
-12. Activate the virtual environment by running `source env/bin/activate` (Linux/MacOS) or `env\scripts\activate` (Windows).
-13. Create and initialize the database by running `python manage.py migrate`.
-14. Create a superuser as described at the end of the tutorial.
+6. Activar el servidor para utilizar el demo y verimificar su funcionamiento a través del navegador en el puerto 8000 (por defecto).
 
+`python3 manage.py runserver`
+
+`http//127.0.0.1:8000/`
+
+7. Agregar los usuarios necesarios para administrar a django mediante el siguiente comando:
+
+`python manage.py createsuperuser --username=<username> --email=<email>`
+
+8. En el navegador se puede ingresar al menú de administración de django en la ruta /admin
+
+`http//127.0.0.1:8000/admin`
+
+# CONTRIBUIDORES
+
+- López García Emmanuel
+- Sánchez Cabrera Luis Daniel
